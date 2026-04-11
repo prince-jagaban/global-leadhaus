@@ -98,22 +98,22 @@ export default function About() {
               {
                 icon: "🏛️",
                 title: "Institutional Strengthening",
-                text: "Improving governance frameworks.",
+                text: "We support governments, corporations, and development organizations in navigating complex operational environments and improving governance frameworks.",
               },
               {
                 icon: "🚀",
                 title: "Empowering Leadership",
-                text: "Building visionary competencies.",
+                text: " We believe organizations thrive when leadership is visionary. We build competencies and close capacity gaps to create enduring impact.",
               },
               {
                 icon: "🌿",
                 title: "Sustainable Solutions",
-                text: "Long-term system strengthening.",
+                text: "Our work is driven by a commitment to solutions that address immediate needs while strengthening systems for sustained success.",
               },
               {
                 icon: "⚙️",
                 title: "Multidisciplinary Capabilities",
-                text: "Integrated cross-sector solutions.",
+                text: "From corporate advisory and IT to infrastructure and governance evaluation, we deliver integrated solutions across key sectors.",
               },
             ].map((item, i) => (
               <motion.div

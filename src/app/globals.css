@@ -1,26 +1,177 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────
+   BRAND CSS VARIABLES
+───────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #0f2035;
+  --navy-deep: #0a1828;
+  --navy-card: #162840;
+  --gold: #b8943f;
+  --gold-light: #d4aa56;
+  --gold-lighter: #e8c46a;
+  --white: #ffffff;
+  --white-muted: rgba(255, 255, 255, 0.7);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─────────────────────────────────────────────
+   TAILWIND v4 THEME
+───────────────────────────────────────────── */
+@theme {
+  --color-navy: #0f2035;
+  --color-navy-deep: #0a1828;
+  --color-navy-card: #162840;
+  --color-gold: #b8943f;
+  --color-gold-light: #d4aa56;
+  --color-gold-lighter: #e8c46a;
+  --font-sans: var(--font-poppins), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─────────────────────────────────────────────
+   BASE RESET
+───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────────────
+   HTML & BODY SETTINGS
+───────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px; /* Adjusts for fixed navbar */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--navy);
+  color: var(--white);
+  font-family: var(--font-poppins), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Ensures full-width layout without shifting */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ─────────────────────────────────────────────
+   CUSTOM SCROLLBAR
+───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
+}
+
+/* ─────────────────────────────────────────────
+   TEXT SELECTION
+───────────────────────────────────────────── */
+::selection {
+  background-color: var(--gold);
+  color: var(--navy);
+}
+
+/* ─────────────────────────────────────────────
+   ACCESSIBILITY FOCUS STYLES
+───────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
+}
+
+/* ─────────────────────────────────────────────
+   REUSABLE SECTION WRAPPER
+───────────────────────────────────────────── */
+.section-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ─────────────────────────────────────────────
+   SECTION SPACING
+───────────────────────────────────────────── */
+.section-pad {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* ─────────────────────────────────────────────
+   GOLD GRADIENT TEXT
+───────────────────────────────────────────── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--gold), var(--gold-lighter));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────────
+   GOLD DIVIDER
+───────────────────────────────────────────── */
+.gold-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lighter));
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────────
+   CARD BASE STYLE
+───────────────────────────────────────────── */
+.brand-card {
+  background-color: var(--navy-card);
+  border: 1px solid rgba(184, 148, 63, 0.15);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.brand-card:hover {
+  border-color: rgba(184, 148, 63, 0.5);
+  transform: translateY(-4px);
+}
+
+/* ─────────────────────────────────────────────
+   SECTION LABEL
+───────────────────────────────────────────── */
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* ─────────────────────────────────────────────
+   SECTION HEADING
+───────────────────────────────────────────── */
+.section-heading {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
 }
