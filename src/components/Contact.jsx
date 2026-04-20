@@ -1,5 +1,6 @@
 "use client";
 
+import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -86,22 +87,22 @@ export default function Contact() {
 
             <div className="space-y-6">
               <ContactItem
-                icon="📍"
+                icon={<MapPin size={18} />}
                 title="Our Office"
-                detail="Abuja, Federal Capital Territory, Nigeria"
+                detail="12, Alh. Yekini Olawale Bakare Avenue, Bakare Estate, Ajiran, Agungi Busstop, Lekki, Lagos."
               />
               <ContactItem
-                icon="📧"
+                icon={<Mail size={18} />}
                 title="Email Us"
                 detail="info@globalleadhaus.com"
               />
               <ContactItem
-                icon="📞"
+                icon={<Phone size={18} />}
                 title="Call Us"
                 detail="+234 800 000 0000"
               />
               <ContactItem
-                icon="⏰"
+                icon={<Clock size={18} />}
                 title="Working Hours"
                 detail="Monday – Friday: 9:00 AM – 5:00 PM"
               />
@@ -174,7 +175,9 @@ export default function Contact() {
         >
           <iframe
             title="Google Map"
-            src="https://www.google.com/maps?q=Abuja%2C%20Nigeria&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37718.61831081158!2d3.509277212113613!3d6.434957441709457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf6ecc0261d15%3A0xb339ecb2b3e37de4!2s12b%20Alh.Yekini%20Olawale%20Bakare%20Ave%2C%20Lekki%20Penninsula%20II%2C%20Street%20106104%2C%20Lagos%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1776187953060!5m2!1sen!2sus"
+            
+            
             className="w-full h-[350px] border-0"
             loading="lazy"
             allowFullScreen
@@ -189,10 +192,20 @@ export default function Contact() {
 function ContactItem({ icon, title, detail }) {
   return (
     <div className="flex items-start gap-4">
-      <div className="text-2xl text-[#d4aa56]">{icon}</div>
+      
+      {/* Icon */}
+      <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gold/30 text-gold">
+        {icon}
+      </div>
+
+      {/* Text */}
       <div>
-        <h4 className="text-white font-semibold">{title}</h4>
-        <p className="text-white/70 text-sm">{detail}</p>
+        <h4 className="text-white font-semibold text-sm mb-1">
+          {title}
+        </h4>
+        <p className="text-white/60 text-sm leading-relaxed">
+          {detail}
+        </p>
       </div>
     </div>
   );

@@ -25,44 +25,108 @@ const services = [
   {
     title: "Consulting & Corporate Advisory",
     description:
-      "Strategic planning, governance, risk management, and organizational restructuring for complex institutional needs.",
-    tags: ["Strategic Planning", "Governance", "Risk Management"],
+      "We deliver strategic planning, institutional transformation, governance advisory, and risk management solutions. Our expertise spans business expansion, investment feasibility, and performance optimization for organizations operating in complex environments.",
+    tags: [
+      "Strategic Planning",
+      "Governance",
+      "Risk Management",
+      "Feasibility Studies",
+    ],
+    tools: [
+      "SWOT & PESTLE",
+      "Balanced Scorecard",
+      "Process Mapping",
+      "Power BI & Tableau",
+    ],
     image: "/images/services/consulting.jpg",
   },
   {
     title: "Training & Professional Development",
     description:
-      "Executive leadership programs, skills acquisition, and institutional capacity building for public and private sectors.",
-    tags: ["Leadership Programs", "Capacity Building", "LMS"],
+      "We provide executive leadership training, workforce development, and institutional capacity building programs. Our solutions enhance professional competencies across public, private, and academic sectors.",
+    tags: [
+      "Leadership Programs",
+      "Capacity Building",
+      "Research & Policy",
+      "Digital Skills",
+    ],
+    tools: ["LMS", "TNA", "ADDIE Model", "SPSS"],
     image: "/images/services/training.jpg",
   },
   {
     title: "Construction & Infrastructure",
     description:
-      "Project management, feasibility analysis, real estate advisory, and development support for large-scale infrastructure.",
-    tags: ["Project Management", "Feasibility", "Real Estate"],
+      "We support infrastructure development through project management, feasibility analysis, and regulatory advisory. Our services ensure efficient execution and sustainable outcomes for large-scale developments.",
+    tags: [
+      "Project Management",
+      "Feasibility",
+      "Real Estate",
+      "Policy Advisory",
+    ],
+    tools: ["MS Project", "Primavera", "GIS", "Financial Modeling"],
     image: "/images/services/infrastructure.jpg",
   },
   {
     title: "Telecommunications & IT",
     description:
-      "Digital transformation, data analytics, network solutions, cybersecurity, and IT systems advisory.",
-    tags: ["Digital Transformation", "Data Analytics", "Network Design"],
+      "We drive digital transformation through IT advisory, data analytics, and network infrastructure solutions. Our expertise includes cybersecurity, cloud platforms, and advanced data management systems.",
+    tags: [
+      "Digital Transformation",
+      "Data Analytics",
+      "Cybersecurity",
+      "Network Design",
+    ],
+    tools: ["Python", "SQL", "Power BI", "Cloud Platforms"],
     image: "/images/services/it.jpg",
   },
   {
     title: "Oil & Gas Advisory",
     description:
-      "Regulatory compliance, investment feasibility, infrastructure support, and policy advisory for the energy sector.",
-    tags: ["Regulatory Compliance", "ESIA", "Investment Analysis"],
+      "We provide strategic advisory across project development, regulatory compliance, and investment feasibility within the energy sector, supporting sustainable and efficient operations.",
+    tags: [
+      "Regulatory Compliance",
+      "Investment Analysis",
+      "ESIA",
+      "Policy Advisory",
+    ],
+    tools: [
+      "Energy Models",
+      "ESIA Frameworks",
+      "Financial Modeling",
+      "Project Evaluation",
+    ],
     image: "/images/services/oil-gas.jpg",
   },
   {
-    title: "Auditing & Governance",
+    title: "Auditing, Governance & Election Audit",
     description:
-      "Financial auditing, board evaluation, corporate governance assessment, and comprehensive ESG reporting.",
-    tags: ["Financial Audit", "ESG", "Board Evaluation"],
+      "We deliver comprehensive auditing services including financial audits, system evaluations, governance assessments, and electoral auditing to ensure transparency, accountability, and institutional integrity.",
+    tags: [
+      "Financial Audit",
+      "Governance",
+      "Election Audit",
+      "ESG",
+    ],
+    tools: ["ISA Standards", "COSO Framework", "ACL Analytics", "IDEA"],
     image: "/images/services/audit.jpg",
+  },
+  {
+    title: "Logistics & Procurement",
+    description:
+      "We provide procurement advisory, supply chain optimization, vendor management, and logistics planning services. Our solutions enhance efficiency, ensure compliance, and reduce operational costs.",
+    tags: [
+      "Procurement",
+      "Supply Chain",
+      "Vendor Management",
+      "Logistics",
+    ],
+    tools: [
+      "ERP Systems",
+      "SCM Platforms",
+      "Procurement Analytics",
+      "Inventory Systems",
+    ],
+    image: "/images/services/procurement.jpg",
   },
 ];
 
@@ -73,6 +137,7 @@ export default function Services() {
       className="bg-[#faf8f3] py-24 px-6 md:px-12 scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto">
+        
         {/* Header */}
         <div className="grid md:grid-cols-2 gap-10 items-end mb-16">
           <motion.div
@@ -103,13 +168,13 @@ export default function Services() {
             viewport={{ once: true }}
             className="text-gray-600 leading-relaxed"
           >
-            From corporate advisory to oil & gas governance, we deliver
-            integrated, expert-led services across all sectors where strong
-            institutions and capable leadership matter most.
+            We provide integrated consulting, training, infrastructure, technology,
+            auditing, and procurement solutions designed to strengthen institutions
+            and deliver measurable impact across sectors.
           </motion.p>
         </div>
 
-        {/* Services Grid */}
+        {/* Grid */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -133,34 +198,40 @@ export default function Services() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-[#0f2035]/70 group-hover:bg-[#0f2035]/6 transition duration-300" />
+                <div className="absolute inset-0 bg-[#0f2035]/ group-hover:bg-[#0f2035]/ transition duration-300" />
               </div>
 
-              {/* Top Accent Line */}
-              <div className="absolute top-0 left-0 h-1 w-0 bg-[#b8943f] transition-all duration-300 group-hover:w-full z-10" />
+              {/* Accent */}
+              <div className="absolute top-0 left-0 h-1 w-0 bg-[#b8943f] group-hover:w-full transition-all duration-300 z-10" />
 
               {/* Content */}
-              <div className="relative p-8">
-                {/* Title */}
+              <div className="p-8">
                 <h3 className="text-xl font-semibold text-[#0f2035] mb-3">
                   {service.title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                   {service.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {service.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="text-xs px-3 py-1 bg-[#faf8f3] border border-[#b8943f]/20 text-gray-600 rounded-full"
+                      className="text-xs px-3 py-1 bg-[#b8943f] border border-[#b8943f]/20 rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
+                </div>
+
+                {/* Tools */}
+                <div className="text-xs text-gray-500">
+                  <span className="font-semibold text-[#b8943f]">
+                    Tools:
+                  </span>{" "}
+                  {service.tools.join(", ")}
                 </div>
               </div>
             </motion.div>

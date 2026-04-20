@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Landmark, BarChart3, Leaf } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -125,12 +126,14 @@ export default function Hero() {
               border: "1px solid rgba(184,148,63,0.2)",
             }}
           >
-            <div className="mb-3 text-xl">🏛️</div>
+            <div className="mb-3 text-gold-light">
+              <Landmark size={28} strokeWidth={1.5} />
+            </div>
             <h4 className="text-white font-semibold mb-1">
               Institutional Strengthening
             </h4>
             <p className="text-white/50 text-sm leading-relaxed">
-              Navigating complex governance frameworks to drive lasting reform
+              Navigating complex governance frameworks to drive lasting reform.
             </p>
           </motion.div>
 
@@ -149,12 +152,14 @@ export default function Hero() {
               border: "1px solid rgba(184,148,63,0.2)",
             }}
           >
-            <div className="mb-3 text-xl">📊</div>
+            <div className="mb-3 text-gold-light">
+              <BarChart3 size={28} strokeWidth={1.5} />
+            </div>
             <h4 className="text-white font-semibold mb-1">
               Data-Driven Advisory
             </h4>
             <p className="text-white/50 text-sm leading-relaxed">
-              Evidence-based insights using advanced analytics tools
+              Evidence-based insights using advanced analytics tools.
             </p>
           </motion.div>
 
@@ -173,12 +178,14 @@ export default function Hero() {
               border: "1px solid rgba(184,148,63,0.2)",
             }}
           >
-            <div className="mb-3 text-xl">🌱</div>
+            <div className="mb-3 text-gold-light">
+              <Leaf size={28} strokeWidth={1.5} />
+            </div>
             <h4 className="text-white font-semibold mb-1">
               Sustainable Impact
             </h4>
             <p className="text-white/50 text-sm leading-relaxed">
-              ESG-integrated strategies for long-term value creation
+              ESG-integrated strategies for long-term value creation.
             </p>
           </motion.div>
         </div>

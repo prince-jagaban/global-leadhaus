@@ -1,6 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  Landmark,
+  Building2,
+  Laptop,
+  Zap,
+  GraduationCap,
+  Banknote,
+  Globe,
+  HeartPulse,
+} from "lucide-react";
 
 const container = {
   hidden: {},
@@ -22,49 +32,49 @@ const fadeUp = {
 
 const industries = [
   {
-    icon: "🏛️",
+    icon: Landmark,
     title: "Government & Public Sector",
     description:
       "Strengthening governance, policy development, and institutional reforms.",
   },
   {
-    icon: "🏗️",
+    icon: Building2,
     title: "Infrastructure & Construction",
     description:
       "Driving sustainable infrastructure development and project delivery.",
   },
   {
-    icon: "💻",
+    icon: Laptop,
     title: "Technology & Telecommunications",
     description:
       "Empowering digital transformation and innovative ICT solutions.",
   },
   {
-    icon: "⚡",
+    icon: Zap,
     title: "Energy & Natural Resources",
     description:
       "Providing strategic advisory across oil, gas, and renewable energy sectors.",
   },
   {
-    icon: "🎓",
+    icon: GraduationCap,
     title: "Education & Capacity Development",
     description:
       "Enhancing human capital through training and institutional development.",
   },
   {
-    icon: "💰",
+    icon: Banknote,
     title: "Financial Services",
     description:
       "Supporting financial governance, risk management, and regulatory compliance.",
   },
   {
-    icon: "🌍",
+    icon: Globe,
     title: "Development & NGOs",
     description:
       "Collaborating with international organizations to deliver impactful solutions.",
   },
   {
-    icon: "🏥",
+    icon: HeartPulse,
     title: "Healthcare & Social Services",
     description:
       "Improving healthcare systems and social impact initiatives.",
@@ -112,32 +122,36 @@ export default function Industries() {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {industries.map((industry, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              whileHover={{ y: -8 }}
-              className="group bg-[#1a3350] border border-[#b8943f]/20 p-6 rounded-sm hover:border-[#b8943f]/40 hover:shadow-lg transition-all duration-300"
-            >
-              {/* Icon */}
-              <div className="text-3xl mb-4 text-[#d4aa56]">
-                {industry.icon}
-              </div>
+          {industries.map((industry, index) => {
+            const Icon = industry.icon;
 
-              {/* Title */}
-              <h3 className="text-lg font-semibold text-white mb-2">
-                {industry.title}
-              </h3>
+            return (
+              <motion.div
+                key={index}
+                variants={fadeUp}
+                whileHover={{ y: -8 }}
+                className="group bg-[#1a3350] border border-[#b8943f]/20 p-6 rounded-sm hover:border-[#b8943f]/40 hover:shadow-lg transition-all duration-300"
+              >
+                {/* Icon */}
+                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#b8943f]/10 text-[#d4aa56] mb-4">
+                  <Icon size={26} strokeWidth={1.5} />
+                </div>
 
-              {/* Description */}
-              <p className="text-sm text-white/60 leading-relaxed">
-                {industry.description}
-              </p>
+                {/* Title */}
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  {industry.title}
+                </h3>
 
-              {/* Hover Accent */}
-              <div className="mt-4 h-[2px] w-0 bg-[#b8943f] transition-all duration-300 group-hover:w-full"></div>
-            </motion.div>
-          ))}
+                {/* Description */}
+                <p className="text-sm text-white/60 leading-relaxed">
+                  {industry.description}
+                </p>
+
+                {/* Hover Accent */}
+                <div className="mt-4 h-[2px] w-0 bg-[#b8943f] transition-all duration-300 group-hover:w-full"></div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
