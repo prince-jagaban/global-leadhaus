@@ -29,14 +29,24 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent successfully!");
+
+    const phoneNumber = "2349058888449";
+
+    const text = `Hello Global LeadHaus,%0A%0A
+Name: ${formData.name}%0A
+Email: ${formData.email}%0A
+Message: ${formData.message}`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${text}`;
+
+    window.open(url, "_blank");
+
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
     <section id="contact" className="bg-[#0f2035] py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        
         {/* Header */}
         <motion.div
           variants={fadeUp}
@@ -66,7 +76,6 @@ export default function Contact() {
 
         {/* Content */}
         <div className="grid md:grid-cols-2 gap-12">
-          
           {/* Contact Information */}
           <motion.div
             variants={fadeUp}
@@ -99,12 +108,12 @@ export default function Contact() {
               <ContactItem
                 icon={<Phone size={18} />}
                 title="Call Us"
-                detail="+234 800 000 0000"
+                detail="+234 905 888 8449"
               />
               <ContactItem
                 icon={<Clock size={18} />}
                 title="Working Hours"
-                detail="Monday – Friday: 9:00 AM – 5:00 PM"
+                detail="Monday – Friday: 8:00 AM – 6:00 PM"
               />
             </div>
           </motion.div>
@@ -151,7 +160,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Type your message here..."
-                  className="w-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#b8943f]"
+                  className="w-full border border-gray-300 px-4 py-2 text-black placeholder-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-[#b8943f]"
                 ></textarea>
               </div>
 
@@ -176,8 +185,6 @@ export default function Contact() {
           <iframe
             title="Google Map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37718.61831081158!2d3.509277212113613!3d6.434957441709457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf6ecc0261d15%3A0xb339ecb2b3e37de4!2s12b%20Alh.Yekini%20Olawale%20Bakare%20Ave%2C%20Lekki%20Penninsula%20II%2C%20Street%20106104%2C%20Lagos%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1776187953060!5m2!1sen!2sus"
-            
-            
             className="w-full h-[350px] border-0"
             loading="lazy"
             allowFullScreen
@@ -192,7 +199,6 @@ export default function Contact() {
 function ContactItem({ icon, title, detail }) {
   return (
     <div className="flex items-start gap-4">
-      
       {/* Icon */}
       <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gold/30 text-gold">
         {icon}
@@ -200,26 +206,15 @@ function ContactItem({ icon, title, detail }) {
 
       {/* Text */}
       <div>
-        <h4 className="text-white font-semibold text-sm mb-1">
-          {title}
-        </h4>
-        <p className="text-white/60 text-sm leading-relaxed">
-          {detail}
-        </p>
+        <h4 className="text-white font-semibold text-sm mb-1">{title}</h4>
+        <p className="text-white/60 text-sm leading-relaxed">{detail}</p>
       </div>
     </div>
   );
 }
 
 /* Reusable Input Field */
-function InputField({
-  label,
-  name,
-  type,
-  value,
-  onChange,
-  placeholder,
-}) {
+function InputField({ label, name, type, value, onChange, placeholder }) {
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -232,7 +227,7 @@ function InputField({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#b8943f]"
+        className="w-full border border-gray-300 px-4 py-2 text-black placeholder-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-[#b8943f]"
       />
     </div>
   );

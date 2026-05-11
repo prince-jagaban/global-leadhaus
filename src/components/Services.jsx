@@ -128,6 +128,26 @@ const services = [
     ],
     image: "/images/services/procurement.jpg",
   },
+  {
+    title: "Strategic Communications & Public Relations",
+    description:
+      "We provide strategic communication and public relations advisory to help organizations manage reputation, engage stakeholders, and communicate effectively across platforms.",
+    tags: [
+      "Media Relations",
+      "Corporate Communication",
+      "Crisis Communication",
+      "Stakeholder Engagement",
+      "Digital Communication Strategy",
+      "Content Development & Messaging",
+    ],
+    tools: [
+      "Stakeholder Mapping",
+      "Crisis Communication Frameworks",
+      "Media Monitoring Tools",
+      "Brand Positioning Models",
+    ],
+      image: "/images/services/pr.jpg",
+  },
 ];
 
 export default function Services() {

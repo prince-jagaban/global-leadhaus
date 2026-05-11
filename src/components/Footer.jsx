@@ -129,8 +129,8 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex items-center gap-2">
-                <MapPin size={16} className="text-[#d4aa56]" />
-                Abuja, Nigeria
+                <MapPin size={40} className="text-[#d4aa56]" />
+                12, Alh. Yekini Olawale Bakare Avenue, Bakare Estate, Ajiran, Agungi Busstop, Lekki, Lagos, Nigeria
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="text-[#d4aa56]" />
@@ -138,9 +138,9 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-[#d4aa56]" />
-                +234 800 000 0000
+                +234 816 651 7061
               </li>
-              <li>🕒 Mon – Fri: 9:00 AM – 5:00 PM</li>
+              <li>🕒 Mon – Fri: 8:00 AM – 6:00 PM</li>
             </ul>
           </div>
         </div>
