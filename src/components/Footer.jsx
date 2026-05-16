@@ -138,7 +138,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-[#d4aa56]" />
-                +234 816 651 7061
+                +234 905 888 8449
               </li>
               <li>🕒 Mon – Fri: 8:00 AM – 6:00 PM</li>
             </ul>
