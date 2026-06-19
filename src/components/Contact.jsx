@@ -97,9 +97,15 @@ Message: ${formData.message}`;
             <div className="space-y-6">
               <ContactItem
                 icon={<MapPin size={18} />}
-                title="Our Office"
-                detail="12, Alh. Yekini Olawale Bakare Avenue, Bakare Estate, Ajiran, Agungi Busstop, Lekki, Lagos."
-              />
+                title="Lagos Office"
+                detail="12, Alh. Yekini Olawale Bakare Avenue, Bakare Estate, Ajiran Bus Stop, Lekki, Lagos."
+            />
+
+            <ContactItem
+              icon={<MapPin size={18} />}
+              title="Abuja Office"
+              detail="Shashilga Court, Plot 102 Ahmadu Bello Way, Mabushi, Ndawuse 900108, Federal Capital Territory, Nigeria."
+            />
               <ContactItem
                 icon={<Mail size={18} />}
                 title="Email Us"
@@ -182,13 +188,39 @@ Message: ${formData.message}`;
           viewport={{ once: true }}
           className="mt-16"
         >
+          <div className="grid md:grid-cols-2 gap-6 mt-16">
+
+        {/* Lagos Office */}
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-3">
+            Lagos Office
+          </h3>
+
           <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37718.61831081158!2d3.509277212113613!3d6.434957441709457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf6ecc0261d15%3A0xb339ecb2b3e37de4!2s12b%20Alh.Yekini%20Olawale%20Bakare%20Ave%2C%20Lekki%20Penninsula%20II%2C%20Street%20106104%2C%20Lagos%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1776187953060!5m2!1sen!2sus"
-            className="w-full h-[350px] border-0"
+            title="Lagos Office"
+            src="https://www.google.com/maps?q=12+Alh+Yekini+Olawale+Bakare+Avenue+Lekki+Lagos&output=embed"
+            className="w-full h-[350px] border-0 rounded-lg"
             loading="lazy"
             allowFullScreen
-          ></iframe>
+          />
+        </div>
+
+        {/* Abuja Office */}
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-3">
+            Abuja Office
+          </h3>
+
+          <iframe
+            title="Abuja Office"
+            src="https://www.google.com/maps?q=Shashilga+Court+Plot+102+Ahmadu+Bello+Way+Mabushi+Abuja&output=embed"
+            className="w-full h-[350px] border-0 rounded-lg"
+            loading="lazy"
+            allowFullScreen
+          />
+        </div>
+
+      </div>
         </motion.div>
       </div>
     </section>

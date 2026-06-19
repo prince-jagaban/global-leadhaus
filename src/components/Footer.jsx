@@ -133,8 +133,8 @@ export default function Footer() {
                 12, Alh. Yekini Olawale Bakare Avenue, Bakare Estate, Ajiran, Agungi Busstop, Lekki, Lagos, Nigeria
               </li>
               <li className="flex items-center gap-2">
-                <Mail size={16} className="text-[#d4aa56]" />
-                info@globalleadhaus.com
+                <MapPin size={40} className="text-[#d4aa56]" />
+                Shashilga Court, Plot 102 Ahmadu Bello Way, Mabushi, Ndawuse 900108, Federal Capital Territory, Nigeria
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-[#d4aa56]" />
