@@ -17,7 +17,7 @@ export default function Footer() {
     {
       name: "LinkedIn",
       icon: FaLinkedinIn,
-      href: "https://www.linkedin.com/company/global-leadhaus",
+      href: "https://www.linkedin.com/company/global-leadhaus-consult-limited/",
     },
     {
       name: "X (Twitter)",
@@ -27,7 +27,7 @@ export default function Footer() {
     {
       name: "Facebook",
       icon: FaFacebookF,
-      href: "https://facebook.com/globalleadhaus",
+      href: "https://www.facebook.com/profile.php?id=61593214391121&sfnsn=scwspwa&mibextid=RUbZ1f",
     },
     {
       name: "Instagram",
